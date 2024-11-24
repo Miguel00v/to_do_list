@@ -20,5 +20,8 @@ from .views import ReactAppView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", ReactAppView.as_view(), name="react-app"),
+     # Unique route to cath value of file_name
+    path('<str:file_name>/', ReactAppView.as_view(), name="app"),
+    # Default route to cath value of file_name
+    path('', ReactAppView.as_view(), name="index"),
 ]
