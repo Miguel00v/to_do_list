@@ -6,6 +6,7 @@ Website for managing tasks where users can:
 - Edit or remove existing tasks.
 - View all tasks.
 - Get reminders for deadlines.
+- Users can´t use website without an account.
 
 ## Features
 - User authentication:
