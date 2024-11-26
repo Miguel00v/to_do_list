@@ -1,0 +1,293 @@
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--darkBrown);
+    max-width: 100%;
+    padding: 1em;
+	height: auto;
+	width: 80%;
+}
+
+.titleForms{
+	margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--darkBrown);
+    text-decoration: none;
+    margin: 15px 0;
+    transition: transform 0.5s;
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+
+p {
+    margin: 1em;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid var(--darkBrown);
+    background-color: transparent;
+    color: var(--lightGrey);
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+button p {
+    margin: 0;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+button.ghost {
+    background-color: transparent;
+    border-color: var(--lightBrown);
+}
+
+button:hover {
+    background-color: var(--darkBrown);
+}
+
+form {
+    background-color: var(--lightBrown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 50%;
+}
+
+input::placeholder {
+    color: var(--darkBrown);
+}
+
+/* Container principal */
+.container {
+    background-color: var(--lightBrown);
+    border-radius: 10px;
+    box-shadow: 0 0 15px 3px var(--lightBrown), 0 0 30px 5px var(--darkBrown);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+	height: 90vh;
+	display: flex;
+}
+
+/* Formulários */
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.6s ease-in-out;
+	display: flex;
+	flex-direction: column;
+	opacity: 1;
+	z-index: 1;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 100%;
+    opacity: 1;
+    z-index: 2; /* Garantir que o SignIn fique acima do SignUp quando necessário */
+}
+
+.sign-up-container {
+	left: 100%;  /* Inicialmente fora da tela */
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.container.right-panel-active .sign-in-container {
+	transform: translateX(100%);  /* Mover o SignIn para a direita */
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+	transform: translateX(-100%);  /* Mover para a posição visível */
+    opacity: 1;
+    z-index: 5;
+}
+
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+/* Painel de sobreposição */
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background: var(--darkBrown);
+    background: linear-gradient(to right, #593E2E, #8B6C5A);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: var(--lightBrown);
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1em;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+
+@media (max-width: 600px) {
+	.main{
+		width: 100%;
+	}
+	input{
+		width: 100%;
+	}
+    .container {
+        padding: 0 10%; /* Adicionando mais espaçamento nas laterais */
+    }
+
+    .form-container,
+    .sign-in-container,
+    .sign-up-container {
+        width: 100%; /* Para telas menores, ainda mantém 100% de largura */
+    }
+
+    .overlay-container {
+        width: 100%; /* A sobreposição vai ocupar metade da tela em dispositivos médios */
+    }
+}
+
+@media (max-width:768px){
+	.main{
+		width: 90%;
+	}
+	input{
+		width: 70%;
+	}
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 15%; /* Para telas médias, mais espaçamento nas laterais */
+    }
+
+    .form-container,
+    .sign-in-container,
+    .sign-up-container {
+        width: 100%; /* Continua utilizando 100% da largura do container */
+    }
+
+    .overlay-container {
+        width: 50%; /* A sobreposição ocupa metade da tela */
+    }
+
+    .overlay {
+        left: -100%;
+        width: 200%; /* Manter a proporção da largura */
+    }
+
+    .overlay-panel {
+        width: 50%; /* A sobreposição vai ocupar 50% da largura */
+    }
+}
+
+
+    .container {
+        padding: 0 20%; /* Aumenta o espaçamento lateral para telas grandes */
+    }
+
+    .form-container,
+    .sign-in-container,
+    .sign-up-container {
+        width: 50%; /* Metade da largura em telas grandes */
+    }
+
+    .overlay-container {
+        width: 50%; /* A sobreposição vai ocupar metade da tela */
+    }
+
+    .overlay-panel {
+        width: 50%; /* A sobreposição vai ocupar 50% da largura */
+    }

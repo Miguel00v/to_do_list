@@ -10,7 +10,7 @@ function Home(){
           <h1 className='titles'>Welcome!</h1>
           <h3 className='titles'>Plan your day, achieve your goals.</h3>
           <Button link="/login" label="Sign-in" />
-          <Button link="/create-account" label="Create account" />
+          <Button link="/signup" label="Sign Up" />
         </main>
       </ >
     );
