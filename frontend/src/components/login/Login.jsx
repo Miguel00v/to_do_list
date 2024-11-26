@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import SignUpForm from './SignUpForm';
 import SignInForm from './SignInForm';
 import Overlay from './Overlay';
@@ -7,25 +7,23 @@ import './login.css';
 
 function Login({ form }) {
   const [isRightPanelActive, setIsRightPanelActive] = useState(false);
-  const isSignUpForm = form === 'signup';
-  const navigate = useNavigate();
   const location = useLocation();
 
-  // Verifica a URL e ajusta o estado do painel com base nela
+  // Verify what url was selected
   useEffect(() => {
     if (location.pathname === '/signup') {
-      setIsRightPanelActive(true); // Se a URL for '/signup', o painel estará ativo
+      setIsRightPanelActive(true); // If url /signup was select, this one is activate
     } else {
-      setIsRightPanelActive(false); // Se for '/login', o painel estará na tela de login
+      setIsRightPanelActive(false); // if url selected was /login, sign in form is activate
     }
-  }, [location.pathname]); // Vai atualizar sempre que o caminho mudar
+  }, [location.pathname]); // Update when the path change
 
   const handleSignUpClick = () => {
-    setIsRightPanelActive(true);
+    setIsRightPanelActive(true); // Verify if the painel is on the right side 
   };
 
   const handleSignInClick = () => {
-    setIsRightPanelActive(false);
+    setIsRightPanelActive(false); // Verify if the painel is on the right side 
   };
 
   return (
@@ -34,7 +32,7 @@ function Login({ form }) {
         
       {isRightPanelActive ? <SignUpForm /> : <SignInForm />}
 
-        {/* Overlay (painel para alternar entre Login e Cadastro) */}
+        {/* Overlay (panel to alternate between forms) */}
         <Overlay
           onSignInClick={handleSignInClick}
           onSignUpClick={handleSignUpClick}

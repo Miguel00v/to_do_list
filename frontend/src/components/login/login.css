@@ -85,7 +85,7 @@ input::placeholder {
     color: var(--darkBrown);
 }
 
-/* Container principal */
+/* Main container */
 .container {
     background-color: var(--lightBrown);
     border-radius: 10px;
@@ -98,7 +98,7 @@ input::placeholder {
 	display: flex;
 }
 
-/* Formulários */
+/* Forms */
 .form-container {
     position: absolute;
     top: 0;
@@ -115,11 +115,11 @@ input::placeholder {
     left: 0;
     width: 100%;
     opacity: 1;
-    z-index: 2; /* Garantir que o SignIn fique acima do SignUp quando necessário */
+    z-index: 2; /* Make sure that signin is on top when necessary */
 }
 
 .sign-up-container {
-	left: 100%;  /* Inicialmente fora da tela */
+	left: 100%;  /* Starts outside */
     width: 100%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -127,13 +127,13 @@ input::placeholder {
 }
 
 .container.right-panel-active .sign-in-container {
-	transform: translateX(100%);  /* Mover o SignIn para a direita */
+	transform: translateX(100%);  /* Move SignIn to right */
     opacity: 0;
     z-index: 1;
 }
 
 .container.right-panel-active .sign-up-container {
-	transform: translateX(-100%);  /* Mover para a posição visível */
+	transform: translateX(-100%);  /* Move to visible position */
     opacity: 1;
     z-index: 5;
 }
@@ -149,7 +149,7 @@ input::placeholder {
     }
 }
 
-/* Painel de sobreposição */
+/* Overlay panel */
 .overlay-container {
     position: absolute;
     top: 0;
@@ -225,17 +225,17 @@ input::placeholder {
 		width: 100%;
 	}
     .container {
-        padding: 0 10%; /* Adicionando mais espaçamento nas laterais */
+        padding: 0 10%; /* Add more space on lats */
     }
 
     .form-container,
     .sign-in-container,
     .sign-up-container {
-        width: 100%; /* Para telas menores, ainda mantém 100% de largura */
+        width: 100%; /* For smaller screens, it still maintains 100% width */
     }
 
     .overlay-container {
-        width: 100%; /* A sobreposição vai ocupar metade da tela em dispositivos médios */
+        width: 100%; /* The overlay will take up half the screen on medium devices */
     }
 }
 
@@ -256,38 +256,38 @@ input::placeholder {
     .form-container,
     .sign-in-container,
     .sign-up-container {
-        width: 100%; /* Continua utilizando 100% da largura do container */
+        width: 100%; /* For medium screens, more spacing on the sides */
     }
 
     .overlay-container {
-        width: 50%; /* A sobreposição ocupa metade da tela */
+        width: 50%; /* The overlay takes up half the screen */
     }
 
     .overlay {
         left: -100%;
-        width: 200%; /* Manter a proporção da largura */
+        width: 200%; /* Keep the width proportion */
     }
 
     .overlay-panel {
-        width: 50%; /* A sobreposição vai ocupar 50% da largura */
+        width: 50%; /* The overlap will take up 50% of the width */
     }
 }
 
 
     .container {
-        padding: 0 20%; /* Aumenta o espaçamento lateral para telas grandes */
+        padding: 0 20%; /* Increases lateral spacing for large screens */
     }
 
     .form-container,
     .sign-in-container,
     .sign-up-container {
-        width: 50%; /* Metade da largura em telas grandes */
+        width: 50%; /* Half the width on large screens */
     }
 
     .overlay-container {
-        width: 50%; /* A sobreposição vai ocupar metade da tela */
+        width: 50%; /* The overlay will take up half the screen */
     }
 
     .overlay-panel {
-        width: 50%; /* A sobreposição vai ocupar 50% da largura */
+        width: 50%; /* The overlap will take up 50% of the width */
     }

@@ -16,6 +16,18 @@ Website for managing tasks where users can:
 - Task history for each user.
 - Fully responsive design.
 
+## Security 
+-Logs
+    - Temporary account lockout for too many failed logins
+    - Password hashing and salting
+    - Input validation and sanitization
+    - Authentication on 2 steps
+    - Sessions expire
+- HTTPS 
+- Tokens authentication (JWT)
+- SQL injection protection (ORM)
+- Cross-Site Request Forgery (CSRF) protection
+
 ## Tools
 - Front-end : 
     - React

@@ -9,8 +9,8 @@ function Home(){
           <img src={logo} className="logo" alt="Logo" />
           <h1 className='titles'>Welcome!</h1>
           <h3 className='titles'>Plan your day, achieve your goals.</h3>
-          <Button link="/login" label="Sign-in" />
-          <Button link="/signup" label="Sign Up" />
+          <Button link="/login" label="Sign In" /> { /* Link to redirect user for sign-in form */}
+          <Button link="/signup" label="Sign Up" /> { /* Link to redirect user for sign up form */}
         </main>
       </ >
     );
