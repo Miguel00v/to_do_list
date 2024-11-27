@@ -37,8 +37,6 @@ Website for managing tasks where users can:
 - Database :
     - PostgreSql
 
-## How to run the project
-
 ### Requirements:
 - Python 3.8+
 - Node.js 14+

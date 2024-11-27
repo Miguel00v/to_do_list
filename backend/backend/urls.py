@@ -15,13 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from .views import ReactAppView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     # Unique route to cath value of file_name
-    path('<str:file_name>/', ReactAppView.as_view(), name="app"),
-    # Default route to cath value of file_name
-    path('', ReactAppView.as_view(), name="index"),
+    path('api/', include('tasks.urls')), # Tasks api
 ]
