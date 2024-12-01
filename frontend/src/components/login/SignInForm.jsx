@@ -9,7 +9,7 @@ function SignInForm() {
         <input type="userName" placeholder="Username" />
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" required />
-        <Link to="/resetPassword" title="Reset your password">
+        <Link className='loginLink' to="/resetPassword" title="Reset your password">
           Forgot your password?
         </Link>
         <button type='submit'><p>Sign In</p></button>

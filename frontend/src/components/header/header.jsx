@@ -40,19 +40,19 @@ function Header(){
         <header>
             <nav>
                 <ul>
-                    <li><Link to='/userDashboard'><p><FontAwesomeIcon icon={faHouse} /></p></Link></li> {/* Homepage */}
-                    <li><Link to='/userDashboard'><p><FontAwesomeIcon icon={faListCheck} /></p></Link></li> {/* Tasks page */}
+                    <li><Link className='linksHeader' to='/userDashboard'><p><FontAwesomeIcon icon={faHouse} /></p></Link></li> {/* Homepage */}
+                    <li><Link className='linksHeader' to='/userDashboard'><p><FontAwesomeIcon icon={faListCheck} /></p></Link></li> {/* Tasks page */}
                     <li className='dropdown' ref={dropdownRef}> {/* Account management, logout, reset password, edit informations */}
-                        <button type='button' onClick={toggleDropdown} ref={buttonRef}><p><FontAwesomeIcon icon={faUser} /></p></button>
+                        <button id='btnHeader' type='button' onClick={toggleDropdown} ref={buttonRef}><p><FontAwesomeIcon icon={faUser} /></p></button>
                             {isOpen && (
                                 <ul className='dropAccountManage'>
-                                        <li><Link to='/manageAccount'><p>Manage Account <FontAwesomeIcon icon={faGear} /></p></Link></li>
-                                        <li><Link to='/resetPassword'><p>Reset password <FontAwesomeIcon icon={faKey} /></p></Link></li>
-                                        <li><Link to='/logout'><p>Logout <FontAwesomeIcon icon={faRightFromBracket} /></p></Link></li>
+                                        <li><Link className='linksHeader' to='/manageAccount'><p>Manage Account <FontAwesomeIcon icon={faGear} /></p></Link></li>
+                                        <li><Link className='linksHeader' to='/resetPassword'><p>Reset password <FontAwesomeIcon icon={faKey} /></p></Link></li>
+                                        <li><Link className='linksHeader' to='/logout'><p>Logout <FontAwesomeIcon icon={faRightFromBracket} /></p></Link></li>
                                 </ul>
                             )}   
                     </li> 
-                    <li><Link to=''>
+                    <li><Link className='linksHeader' to=''>
                         <p><FontAwesomeIcon icon={faBell} /></p>
                         <div id='counterMessages'></div>
                         </Link>

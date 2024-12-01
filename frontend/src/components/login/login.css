@@ -14,14 +14,14 @@
 	margin-bottom: 0.5em;
 }
 
-a {
+.loginLink {
     color: var(--darkBrown);
     text-decoration: none;
     margin: 15px 0;
     transition: transform 0.5s;
 }
 
-a:hover {
+.loginLink:hover {
     transform: scale(1.2);
 }
 

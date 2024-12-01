@@ -19,43 +19,43 @@ ul {
     flex-direction: row;
     gap: 0.5em;
     justify-content: space-between;
+    align-items: center;
 }
 
 li {
-    width: 100%;
+    flex: 1;
     display: flex;
 }
 
 /* Link content and button content expand to fill full */
-li a {
+li .linksHeader, li #btnHeader {
+    all: unset;
     flex-grow: 1;
-    padding: 1em;
     color: var(--darkBrown);
     border: 1px solid var(--darkBrown);
     border-radius: 10px;
     transition: all 0.5s;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4em;
+    min-width: 100%;
+    cursor: pointer;
+}  
+
+li p, li #btnHeader p{
+    padding: 0;
+    margin: 0;
 }
 
 .iconsHeader{
     text-align: center;
 }
 
-li a:hover, li button:hover{
+li .linksHeader:hover, li #btnHeader:hover{
     background-color: var(--darkBrown);
     color: var(--lightGrey);
-}
-
-li button{
-    width: 100%;
-    height: 100%;
-    color: var(--darkBrown);
-    border: 1px solid var(--darkBrown);
-    background-color: transparent;
-    border-radius: 10px;
-    transition: all 0.5s;
-    text-align: center;
-    cursor: pointer;
 }
 
 /* Style of dropdown Mange Account */
@@ -68,7 +68,7 @@ li button{
     display: flex;
     flex-direction:column ;
     position: absolute;
-    min-width: 20em;
+    width: auto;
     max-height: 30em;
     z-index: 1;
     background-color: var(--lightGrey);
@@ -76,3 +76,12 @@ li button{
     border-bottom-left-radius:20px ;
     border-bottom-right-radius:20px ;
 }
+
+.dropAccountManage .linksHeader{
+    min-width: 100%;
+    min-height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
