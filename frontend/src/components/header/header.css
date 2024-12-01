@@ -68,7 +68,7 @@ li .linksHeader:hover, li #btnHeader:hover{
     display: flex;
     flex-direction:column ;
     position: absolute;
-    width: auto;
+    width: 100%;
     max-height: 30em;
     z-index: 1;
     background-color: var(--lightGrey);
@@ -77,11 +77,34 @@ li .linksHeader:hover, li #btnHeader:hover{
     border-bottom-right-radius:20px ;
 }
 
+.dropAccountManage li p, .dropAccountManage li{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1em;
+}
+
 .dropAccountManage .linksHeader{
-    min-width: 100%;
     min-height: 4em;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.divDrop{
+    max-width: 97%;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .dropAccountManage{
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        position: fixed;
+        width: 90%;
+    }
+}

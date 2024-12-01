@@ -46,9 +46,9 @@ function Header(){
                         <button id='btnHeader' type='button' onClick={toggleDropdown} ref={buttonRef}><p><FontAwesomeIcon icon={faUser} /></p></button>
                             {isOpen && (
                                 <ul className='dropAccountManage'>
-                                        <li><Link className='linksHeader' to='/manageAccount'><p>Manage Account <FontAwesomeIcon icon={faGear} /></p></Link></li>
-                                        <li><Link className='linksHeader' to='/resetPassword'><p>Reset password <FontAwesomeIcon icon={faKey} /></p></Link></li>
-                                        <li><Link className='linksHeader' to='/logout'><p>Logout <FontAwesomeIcon icon={faRightFromBracket} /></p></Link></li>
+                                        <li><Link className='linksHeader' to='/manageAccount'><div className='divDrop'><p>Manage Account</p><FontAwesomeIcon className='iconDrop' icon={faGear} /></div></Link></li>
+                                        <li><Link className='linksHeader' to='/resetPassword'><div className='divDrop'><p>Reset password</p><FontAwesomeIcon className='iconDrop' icon={faKey} /></div></Link></li>
+                                        <li><Link className='linksHeader' to='/logout'><div className='divDrop'><p>Logout</p><FontAwesomeIcon className='iconDrop' icon={faRightFromBracket} /></div></Link></li>
                                 </ul>
                             )}   
                     </li> 
